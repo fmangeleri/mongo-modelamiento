@@ -1,0 +1,14 @@
+use('platzi_store')
+
+db.stores.insertOne({
+  _id: 1,
+  name: 'Big Pons',
+  category: 'Fast Food'
+})
+
+db.stores_address.insertOne({
+  store_id: 1,
+  city: 'Bs As',
+  street: 'Av. Libertador',
+  number: 1572
+})

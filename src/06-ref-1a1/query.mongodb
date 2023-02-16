@@ -1,0 +1,12 @@
+use('platzi_store')
+
+db.stores.aggregate([
+  {
+    $lookup: {
+      from: 'stores_address',
+      localField: '_id',
+      foreignField: 'store_id',
+      as: 'address'
+    }
+  }
+])
