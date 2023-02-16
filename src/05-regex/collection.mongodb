@@ -1,0 +1,36 @@
+use('platzi_store')
+
+db.createCollection('users', {
+  validator: {
+    $jsonSchema: {
+      bsonType: 'object',
+      required: ['email', 'password', 'role'],
+      properties: {
+        name: {
+          bsonType: 'string'
+        },
+        last_name: {
+          bsonType: 'string'
+        },
+        email: {
+          bsonType: 'string'
+        },
+        password: {
+          bsonType: 'string',
+          pattern: "^[0-9]{6,}$"
+        },
+        role: {
+          enum: ['admin', 'seller', 'client']
+        },
+        isSingle: {
+          bsonType: 'bool'
+        },
+        age: {
+          bsonType: 'number',
+          minimum: 18,
+          maximum: 65
+        }
+      }
+    }
+  }
+})
