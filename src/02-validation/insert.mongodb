@@ -2,4 +2,8 @@ use('platzi_store')
 
 db.users.insertOne({
   email: 'fmangeleri@gmail.com',
+  password: '123',
+  role: 'admin',
+  age: 22,
+  isSingle: true
 })
