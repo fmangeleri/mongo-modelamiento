@@ -1,0 +1,23 @@
+use('platzi_store')
+
+// Puedo aplicarlo para mostrar las ordenes en cada user
+// o mostrar el user en cada order
+
+db.users.aggregate([
+  {
+    /**
+     * from: The target collection.
+     * localField: The local join field.
+     * foreignField: The target join field.
+     * as: The name for the results.
+     * pipeline: Optional pipeline to run on the foreign collection.
+     * let: Optional variables to use in the pipeline field stages.
+     */
+    $lookup: {
+      from: 'orders',
+      localField: '_id',
+      foreignField: 'user_id',
+      as: 'orders'
+    }
+  }
+])

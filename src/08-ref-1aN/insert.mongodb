@@ -1,0 +1,36 @@
+use('platzi_store')
+
+db.orders.insertMany([
+  {
+    user_id: ObjectId('63eea275ab9d0a23d74e5713'),
+    date: '01-09-2022',
+    items: [
+      {
+        name: 'iphone',
+        price: 1399,
+        qty: 1
+      },
+      {
+        name: 'iphone',
+        price: 1399,
+        qty: 1
+      }
+    ]
+  },
+  {
+    user_id: ObjectId('63eea275ab9d0a23d74e5713'),
+    date: '01-09-2022',
+    items: [
+      {
+        name: 'iphone',
+        price: 1399,
+        qty: 1
+      },
+      {
+        name: 'iphone',
+        price: 1399,
+        qty: 1
+      }
+    ]
+  }
+])
