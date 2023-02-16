@@ -1,0 +1,5 @@
+use('platzi_store')
+
+db.users.insertOne({
+  email: 'fmangeleri@gmail.com',
+})
