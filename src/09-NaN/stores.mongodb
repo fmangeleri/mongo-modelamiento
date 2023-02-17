@@ -1,0 +1,26 @@
+use('platzi_store')
+
+db.stores.drop()
+
+db.stores.insertMany([
+  {
+    name: 'Zara',
+    products_id: [
+      ObjectId('63ef8530dbce806cc88b39a7'),
+      ObjectId('63ef8518289ee691774369d2'),
+      ObjectId('63ee9b191adf69e96922494f')
+    ]
+  },
+  {
+    name: 'Armani',
+    products_id: [
+      ObjectId('63ef8518289ee691774369d2')
+    ]
+  },
+  {
+    name: 'True Religion',
+    products_id: [
+      ObjectId('63ef8530dbce806cc88b39a7')
+    ]
+  }
+])

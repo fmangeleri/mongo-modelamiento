@@ -1,0 +1,21 @@
+use('platzi_store')
+
+db.stores.aggregate([
+  {
+    $lookup: {
+      from: 'products',
+      localField: 'products_id',
+      foreignField: '_id',
+      as: 'products'
+    }
+  },
+  {
+    /**
+     * specifications: The fields to
+     *   include or exclude.
+     */
+    $project: {
+      products_id: 0
+    }
+  }
+])
